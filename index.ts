@@ -3,9 +3,9 @@ import NetworkProvider, {useNetworkContext} from "./src/providers/NetworkProvide
 import TransactionProvider, {useTransactionContext} from "./src/providers/TransactionProvider";
 import PayloadProvider, {usePayloadContext} from "./src/providers/PayloadProvider";
 import { lookUpImage } from "./src/utils/checkImage";
-import * as constants from "./src/utils/constants"
+import * as Constants from "./src/utils/constants"
 
-export default {
+export {
     IndexerProvider,
     NetworkProvider,
     PayloadProvider,
@@ -15,5 +15,5 @@ export default {
     useTransactionContext,
     usePayloadContext,
     lookUpImage,
-    ...constants
+    Constants
 };
