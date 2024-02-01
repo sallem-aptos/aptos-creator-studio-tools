@@ -7,14 +7,14 @@ function makeContext<TContext>(
   name: string,
 ): [React.Context<TContext | undefined>, () => TContext];
 
-function makeContext<TContext, TProps = {}>(
-  name: string,
-  valueProvider: (props: TProps) => TContext,
-): [
-  (props: PropsWithChildren<TProps>) => Element,
-  () => TContext,
-  React.Context<TContext | undefined>,
-];
+// function makeContext<TContext, TProps = {}>(
+//   name: string,
+//   valueProvider?: (props: TProps) => TContext,
+// ): [
+//   (props: PropsWithChildren<TProps>) => Element,
+//   () => TContext,
+//   React.Context<TContext | undefined>,
+// ];
 
 function makeContext<TContext, TProps = {}>(
   name: string,

@@ -19,7 +19,7 @@ export const [IndexerContext, useIndexerContext] =
   makeContext<IndexerContextValue>("IndexerContext");
 
 interface IndexerProviderProps {
-  children: Element;
+  children: React.JSX.Element;
   network: Network;
 }
 /**

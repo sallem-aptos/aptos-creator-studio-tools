@@ -1,6 +1,6 @@
 import { Hex } from "@aptos-labs/ts-sdk";
 
-export const lookUpImage = async (url: string) => {
+export async function lookUpImage(url: string){
      try {
         const res = await fetch(url);
         const buff = await res.blob();
@@ -14,7 +14,7 @@ export const lookUpImage = async (url: string) => {
     }
 }
 
-export const blobToBase64 = (blob: Blob): Promise<string|any> => {
+export function blobToBase64(blob: Blob) {
     const reader = new FileReader();
     reader.readAsDataURL(blob);
     return new Promise((resolve) => {
@@ -30,12 +30,12 @@ export const fileToUint8array = async (file: File): Promise<Uint8Array> => {
 }
 
 export const uint8arrayToBase64 = (inscribedData: string) => {
-  // convert to Hex and then to buffer then to base64
+  // convert to Hex and then to buffer
   const bytes = (Hex.fromHexInput(inscribedData)as any).data;
   return arrayBufferToBase64(bytes);
 }
 
-function arrayBufferToBase64( bytes: any ) {
+function arrayBufferToBase64( bytes ) {
   let binary = "";
   const len = bytes.byteLength;
   for (let i = 0; i < len; i++) {

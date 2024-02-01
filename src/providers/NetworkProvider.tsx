@@ -5,7 +5,7 @@ import React, { useMemo } from "react";
 import { Network } from "@aptos-labs/ts-sdk";
 import makeContext from "../hooks/makeContext";
 
-interface NetworkContextValue {
+export interface NetworkContextValue {
   network: Network
 }
 
@@ -13,7 +13,7 @@ export const [NetworkContext, useNetworkContext] =
   makeContext<NetworkContextValue>("NetworkContext");
 
 interface NetworkProviderProps {
-  children: Element;
+  children: React.JSX.Element;
   accountNetwork: any;
 }
 /**

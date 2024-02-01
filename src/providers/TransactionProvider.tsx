@@ -7,15 +7,16 @@ import { TransactionResponse, ViewRequest, Network } from "@aptos-labs/ts-sdk";
 import makeContext from "../hooks/makeContext";
 import { getProvider } from "../utils/getProvider";
 
-interface TransactionContextValue {
-    runTransaction: (payload: InputTransactionData) => Promise<TransactionResponse |undefined>
+export interface TransactionContextValue {
+    runTransaction: (payload: InputTransactionData) => Promise<TransactionResponse | any | undefined>
+    runViewFunction: (payload: ViewRequest) => Promise< any | undefined>
 }
 
 export const [TransactionContext, useTransactionContext] =
   makeContext<TransactionContextValue>("TransactionContext");
 
-interface TransactionProviderProps {
-  children: Element;
+export interface TransactionProviderProps {
+  children: React.JSX.Element;
   network: Network;
   account: any; 
   signAndSubmitTransaction: any;
@@ -41,7 +42,7 @@ export default function TransactionProvider({
           transactionHash: response.hash,
         });
       } catch (error: any) {
-        return {error: "Failed to wait for Transaction"}
+        return response;
       }
     } catch (error: any) {
       // eslint-disable-next-line no-console

@@ -7,22 +7,25 @@ import { AccountAddressInput, AnyNumber, APTOS_COIN, AccountAddress } from "@apt
 import makeContext from "../hooks/makeContext";
 import { COIN_LISTING, MODULE_ADDRESS, INSCRIPTON_MODULE_ADDRESS } from "../utils/constants";
 
-interface PayloadContextValue {
+export interface PayloadContextValue {
   buildTransactionPayload: (
     module: string,
     func: string,
     types: string[],
     args: any[]
   ) => InputTransactionData;
+  buildInitPurchaseListingPayload: (...args: any[]) => InputTransactionData;
+  initAuctionListing: (...args: any[]) => InputTransactionData;
   buildPurchaseListingPayload: (...args: any[]) => InputTransactionData;
   buildEndFixedPriceListingPayload: (...args: any[]) => InputTransactionData;
+  buildCreateV2withInscriptionPayload: (...args: any[]) => InputTransactionData;
 }
 
 export const [PayloadContext, usePayloadContext] =
   makeContext<PayloadContextValue>("PayloadContext");
 
 interface PayloadProviderProps {
-  children: Element;
+  children: React.JSX.Element;
 }
 /**
  * Hook for Payload Provider
@@ -147,7 +150,6 @@ export default function PayloadProvider({
         initAuctionListing,
         buildEndFixedPriceListingPayload,
         buildCreateV2withInscriptionPayload,
-
     }),
     [],
   );
