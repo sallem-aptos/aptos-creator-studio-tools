@@ -5,7 +5,7 @@ import React, { useMemo } from "react";
 import { Network } from "@aptos-labs/ts-sdk";
 import makeContext from "../hooks/makeContext";
 
-export interface NetworkContextValue {
+interface NetworkContextValue {
   network: Network
 }
 

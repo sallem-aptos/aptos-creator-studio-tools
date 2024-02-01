@@ -7,7 +7,7 @@ import { AccountAddressInput, AnyNumber, APTOS_COIN, AccountAddress } from "@apt
 import makeContext from "../hooks/makeContext";
 import { COIN_LISTING, MODULE_ADDRESS, INSCRIPTON_MODULE_ADDRESS } from "../utils/constants";
 
-export interface PayloadContextValue {
+interface PayloadContextValue {
   buildTransactionPayload: (
     module: string,
     func: string,

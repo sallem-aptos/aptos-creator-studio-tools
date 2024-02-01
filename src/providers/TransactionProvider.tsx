@@ -7,7 +7,7 @@ import { TransactionResponse, ViewRequest, Network } from "@aptos-labs/ts-sdk";
 import makeContext from "../hooks/makeContext";
 import { getProvider } from "../utils/getProvider";
 
-export interface TransactionContextValue {
+interface TransactionContextValue {
     runTransaction: (payload: InputTransactionData) => Promise<TransactionResponse |undefined>
 }
 

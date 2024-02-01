@@ -7,7 +7,7 @@ import { getProvider } from "../utils/getProvider";
 import { FETCH_COLLECTIONS_DATA_IDS, FETCH_COLLECTIONS_DATA_ITEM, FETCH_COLLECTIONS_FLOOR, FETCH_COLLECTION_DATA, FETCH_LISTING_DETAILS } from "../Queries";
 import { AccountAddress, Network } from "@aptos-labs/ts-sdk";
 
-export interface IndexerContextValue {
+interface IndexerContextValue {
     queryIndexer: (query: string, variables?: {}) => Promise<any>;
     getTopCollections: any;
     getCollectionData: any;

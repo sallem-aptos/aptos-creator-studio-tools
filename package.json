@@ -1,6 +1,6 @@
 {
   "name": "aptos-creator-studio-tools",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This project is to give you the react tools to build your own creator studio",
   "main": "./dist/index.js",
   "scripts": {
