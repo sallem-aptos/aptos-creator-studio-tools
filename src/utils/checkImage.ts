@@ -31,7 +31,7 @@ export const fileToUint8array = async (file: File): Promise<Uint8Array> => {
 
 export const uint8arrayToBase64 = (inscribedData: string) => {
   // convert to Hex and then to buffer then to base64
-  const bytes = Hex.fromHexInput(inscribedData).data;
+  const bytes = (Hex.fromHexInput(inscribedData)as any).data;
   return arrayBufferToBase64(bytes);
 }
 

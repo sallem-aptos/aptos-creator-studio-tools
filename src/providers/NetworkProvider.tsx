@@ -13,7 +13,7 @@ export const [NetworkContext, useNetworkContext] =
   makeContext<NetworkContextValue>("NetworkContext");
 
 interface NetworkProviderProps {
-  children: JSX.Element;
+  children: Element;
   accountNetwork: any;
 }
 /**

@@ -19,7 +19,7 @@ export const [IndexerContext, useIndexerContext] =
   makeContext<IndexerContextValue>("IndexerContext");
 
 interface IndexerProviderProps {
-  children: JSX.Element;
+  children: Element;
   network: Network;
 }
 /**
@@ -70,7 +70,7 @@ export default function IndexerProvider({
     const variables = {
       collection_id: AccountAddress.from(collection_id).toStringLong(),
     };
-    const result = await queryIndexer(
+    const result: any = await queryIndexer(
       FETCH_COLLECTION_DATA,
       variables,
     );
@@ -92,7 +92,7 @@ export default function IndexerProvider({
     const variables = {
       listing_id: AccountAddress.from(listing_id).toStringLong(),
     };
-    const result = await queryIndexer(
+    const result: any = await queryIndexer(
       FETCH_LISTING_DETAILS,
       variables,
     );

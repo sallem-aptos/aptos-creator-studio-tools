@@ -15,7 +15,7 @@ export const [TransactionContext, useTransactionContext] =
   makeContext<TransactionContextValue>("TransactionContext");
 
 interface TransactionProviderProps {
-  children: JSX.Element;
+  children: Element;
   network: Network;
   account: any; 
   signAndSubmitTransaction: any;

@@ -1,13 +1,13 @@
 {
   "name": "aptos-creator-studio-tools",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This project is to give you the react tools to build your own creator studio",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["aptos", "aptos creator studio tools", "aptos marketplace tools"],
   "author": "Sallem Ahmed",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +19,7 @@
     "uglify-js": "^3.17.4"
   },
   "devDependencies": {
+    "ts-loader": "^9.5.1",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.4"
   }

@@ -22,7 +22,7 @@ export const [PayloadContext, usePayloadContext] =
   makeContext<PayloadContextValue>("PayloadContext");
 
 interface PayloadProviderProps {
-  children: JSX.Element;
+  children: Element;
 }
 /**
  * Hook for Payload Provider
